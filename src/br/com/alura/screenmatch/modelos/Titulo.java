@@ -37,4 +37,8 @@ public class Titulo {
     public int getTotalDeAvaliacoes() {
         return this.totalDeAvaliacoes;
     }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
 }
