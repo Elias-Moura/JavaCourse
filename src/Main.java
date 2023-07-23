@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -15,6 +16,16 @@ public class Main {
         meuFilme.avalia(5);
         System.out.println(meuFilme.pegaMediaAvaliacoes());
         System.out.println(meuFilme.getTotalDeAvaliacoes());
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Corrida maluca");
+        outroFilme.setAnoDeLancamento(1999);
+        outroFilme.setDuracaoEmMinutos(40);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        System.out.println(calculadora.getTempoTotal());
 
     }
 
