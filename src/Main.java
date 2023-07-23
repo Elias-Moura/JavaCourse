@@ -1,26 +1,21 @@
-import java.util.Scanner;
+import br.com.alura.screenmatch.modelos.Filme;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        Filme meuFilme = new Filme();
+        meuFilme.setNome("Top Gun");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(210);
 
-        Scanner scanner = new Scanner(System.in);
+        meuFilme.exibeFichaTecnica();
+        meuFilme.avalia(8);
+        meuFilme.avalia(10);
+        meuFilme.avalia(5);
+        System.out.println(meuFilme.pegaMediaAvaliacoes());
+        System.out.println(meuFilme.getTotalDeAvaliacoes());
 
-        System.out.print("Digite seu nome: ");
-        String nome = scanner.nextLine();
-        System.out.print("Digite a sua idade: ");
-        int idade = scanner.nextInt();
-        System.out.print("Digite o valor que você pretende investir: ");
-        double valor = scanner.nextDouble();
-
-        System.out.println(String.format("""
-                Olá, %s. 
-                Tudo bem?
-                
-                Você tem %d anos de idade.
-                
-                Seu investimento de R$ %.2f está sendo processado...                
-                """, nome, idade, valor));
     }
+
 }
