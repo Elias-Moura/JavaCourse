@@ -4,13 +4,13 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Top Gun");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("Top Gun", 1970);
         meuFilme.setDuracaoEmMinutos(210);
 
         meuFilme.exibeFichaTecnica();
@@ -20,9 +20,7 @@ public class Main {
         System.out.println(meuFilme.pegaMediaAvaliacoes());
         System.out.println(meuFilme.getTotalDeAvaliacoes());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Corrida maluca");
-        outroFilme.setAnoDeLancamento(1999);
+        Filme outroFilme = new Filme("Corrida Maluca",1999);
         outroFilme.setDuracaoEmMinutos(40);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -32,11 +30,8 @@ public class Main {
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.setTemporadas(5);
-
 
         filtro.filtra(meuFilme);
 
@@ -45,6 +40,18 @@ public class Main {
         episodio.setSerie(lost);
         episodio.setVisualicoes(300);
         filtro.filtra(episodio);
+
+        Filme eliasFilme = new Filme("Javao da massa", 2023);
+        eliasFilme.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(eliasFilme);
+
+        System.out.println(listaDeFilmes.size());
+        System.out.println(listaDeFilmes);
+        System.out.println(listaDeFilmes.get(0));
     }
 
 }

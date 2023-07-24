@@ -4,10 +4,18 @@ public class Titulo {
     private String nome;
     private int anoDeLancamento;
     private int duracaoEmMinutos;
+
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+    public String getNome() {
+        return nome;
+    }
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -32,6 +40,10 @@ public class Titulo {
 
     public double pegaMediaAvaliacoes(){
         return this.somaDasAvaliacoes / this.totalDeAvaliacoes;
+    }
+
+    public int getAnoDeLancamento() {
+        return this.anoDeLancamento;
     }
 
     public int getTotalDeAvaliacoes() {
